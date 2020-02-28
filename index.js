@@ -1,11 +1,10 @@
 const express = require("express");
 const cors = require("cors");
-const bodyParser = require("body-parser");
 const eventRouter = require("./Event/router");
 
 const app = express();
 const corsMiddleware = cors();
-const parserMiddleware = bodyParser.json();
+const parserMiddleware = express.json();
 const port = 4000;
 
 app.use(corsMiddleware);
