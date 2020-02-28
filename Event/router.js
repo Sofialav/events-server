@@ -14,6 +14,20 @@ router.get("/events", (req, res, next) => {
     })
     .catch(next);
 });
+//pagination
+// router.get("/events", (req, res, next) => {
+//   const limit = Math.min(req.query.limit || 25, 500);
+//   const offset = req.query.offset || 0;
+//   Event.findAndCountAll({ limit, offset })
+//     .then(result => {
+//       if (result) {
+//         return res.send({ events: result.rows, total: result.count });
+//       } else {
+//         res.status(404).send("No events exist");
+//       }
+//     })
+//     .catch(next);
+// });
 // create a new event
 router.post("/events", (req, res, next) => {
   Event.create(req.body)
